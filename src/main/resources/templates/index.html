@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NAFT - NFT Markeplace</title>
+  <title>Projeck Beken - NFT Marketplace</title>
 
   <!-- 
     - favicon
@@ -26,85 +26,16 @@
 </head>
 
 <body id="top">
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header>
-
-    <div class="container">
-
-      <a href="#" class="logo">
-        <img src="./assets/images/logo.png" alt="NAFT logo">
-      </a>
-
-      <div class="header-right">
-
-        <div class="header-nav-wrapper">
-
-          <button class="navbar-toggle-btn" data-navbar-toggle-btn>
-            <ion-icon name="menu-outline"></ion-icon>
-          </button>
-
-          <nav class="navbar" data-navbar>
-
-            <ul class="navbar-list">
-
-              <li>
-                <a href="#" class="navbar-link">Home</a>
-              </li>
-
-              <li>
-                <a href="#" class="navbar-link">About</a>
-              </li>
-
-              <li>
-                <a href="#" class="navbar-link">Explore</a>
-              </li>
-
-              <li>
-                <a href="#" class="navbar-link">Creators</a>
-              </li>
-
-              <li>
-                <a href="#" class="navbar-link">Collections</a>
-              </li>
-
-              <li>
-                <a href="#" class="navbar-link">Blog</a>
-              </li>
-
-              <li>
-                <a href="#" class="navbar-link">Contact</a>
-              </li>
-
-            </ul>
-
-          </nav>
-
-        </div>
-
-        <div class="header-actions">
-          <input type="search" placeholder="Search" class="search-field">
-
-          <button class="btn btn-primary">Sign in</button>
-        </div>
-
-      </div>
-
-    </div>
-
-  </header>
-
-
-
-
-
+		
+	 <div th:insert="fragment/header :: header (aktif = 'index')"/>
+	 </div>	
+	 <!-- 
+        - #HEADER
+      -->
   <main>
-
+  
     <article>
-
+    
       <!-- 
         - #HERO
       -->
@@ -114,32 +45,27 @@
 
           <div class="hero-content">
 
-            <h1 class="h1 hero-title">Discover digital art sell your specific <span>NFT</span></h1>
-
+            <h1 class="h1 hero-title">Marketplace<span>NFT</span></h1>
+             <h2 class="h2 hero-title">Sebagai tempat penjualan gambar dengan berbasis Cryptocurrency</h2>
             <p class="hero-text">
-              Partner with one of the world’s largest retailers to showcase your brand and products.
+             Kami memberikan layanan mudah untuk Anda, Choose Me, We will serve You!
             </p>
 
             <div class="btn-group">
-              <button class="btn btn-primary">Explore more</button>
-
-              <button class="btn btn-secondary">Create now</button>
+              <button class="btn btn-primary"><a href="daftar.html" class="navbar-link" >Explore More </a></button>
             </div>
 
           </div>
 
           <figure class="hero-banner">
-            <img src="./assets/images/hero-banner.jpg" alt="nft art">
+            <img src="./assets/images/NFT2.jpg" alt="nft art">
           </figure>
 
         </div>
       </section>
 
 
-
-
-
-      <!-- 
+			<!-- 
         - #NEW PRODUCT
       -->
 
@@ -162,7 +88,7 @@
 
                 <figure class="product-banner">
 
-                  <img src="./assets/images/new-item-1.jpg" alt="Dimond riding a blue body art">
+                  <img src="./assets/images/monyetNFT1.jpg" alt="karya milik Sendi">
 
                   <div class="product-actions">
                     <button class="product-card-menu">
@@ -174,13 +100,13 @@
                     </button>
                   </div>
 
-                  <button class="place-bid-btn">Place bid</button>
+                  <button class="place-bid-btn">Klik Disini!</button>
 
                 </figure>
 
                 <div class="product-content">
 
-                  <a href="#" class="h4 product-title">Dimond riding a blue body art</a>
+                  <a href="#" class="h4 product-title">Karya milik Sendi</a>
 
                   <div class="product-meta">
 
@@ -191,15 +117,15 @@
                       </figure>
 
                       <div class="author-content">
-                        <h4 class="h5 author-title">Jack R</h4>
+                        <h4 class="h5 author-title">Sen J</h4>
 
-                        <a href="#" class="author-username">@jackr</a>
+                        <a href="#" class="author-username">@senj</a>
                       </div>
 
                     </div>
 
                     <div class="product-price">
-                      <data value="0.568">0.568ETH</data>
+                      <data value="2.783">2.783ETH</data>
 
                       <p class="label">Current Bid</p>
                     </div>
@@ -224,7 +150,7 @@
 
                 <figure class="product-banner">
 
-                  <img src="./assets/images/new-item-2.jpg" alt="Dimond riding a blue body art">
+                  <img src="./assets/images/monyetNFT2.jpg" alt="Karya milik Kevin">
 
                   <div class="product-actions">
                     <button class="product-card-menu">
@@ -236,13 +162,13 @@
                     </button>
                   </div>
 
-                  <button class="place-bid-btn">Place bid</button>
+                  <button class="place-bid-btn">Klik Disini!</button>
 
                 </figure>
 
                 <div class="product-content">
 
-                  <a href="#" class="h4 product-title">Dimond riding a blue body art</a>
+                  <a href="#" class="h4 product-title">Karya milik Kevin</a>
 
                   <div class="product-meta">
 
@@ -253,15 +179,15 @@
                       </figure>
 
                       <div class="author-content">
-                        <h4 class="h5 author-title">Jack R</h4>
+                        <h4 class="h5 author-title">Kev G</h4>
 
-                        <a href="#" class="author-username">@jackr</a>
+                        <a href="#" class="author-username">@kevg</a>
                       </div>
 
                     </div>
 
                     <div class="product-price">
-                      <data value="0.568">0.568ETH</data>
+                      <data value="10.532">10.532ETH</data>
 
                       <p class="label">Current Bid</p>
                     </div>
@@ -408,104 +334,6 @@
 
         </div>
       </section>
-
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section class="about">
-        <div class="container">
-
-          <h2 class="h2 about-title">Create and sell your NFTs</h2>
-
-          <ol class="about-list">
-
-            <li class="about-item">
-              <div class="about-card">
-
-                <div class="card-number">01</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/single-create-sell-item-1.png" alt="wallet icon">
-                </div>
-
-                <h3 class="h3 about-card-title">Set up Your Wallet</h3>
-
-                <p class="about-card-text">
-                  There are many variations of passagi Ipsum available but the majorty have eration in some form, by
-                  injected
-                </p>
-
-              </div>
-            </li>
-
-            <li class="about-item">
-              <div class="about-card">
-
-                <div class="card-number">02</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/single-create-sell-item-2.png" alt="collection icon">
-                </div>
-
-                <h3 class="h3 about-card-title">Create Your Collection</h3>
-
-                <p class="about-card-text">
-                  There are many variations of passagi Ipsum available but the majorty have eration in some form, by
-                  injected
-                </p>
-
-              </div>
-            </li>
-
-            <li class="about-item">
-              <div class="about-card">
-
-                <div class="card-number">03</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/single-create-sell-item-3.png" alt="folder icon">
-                </div>
-
-                <h3 class="h3 about-card-title">Add Your NFT's</h3>
-
-                <p class="about-card-text">
-                  There are many variations of passagi Ipsum available but the majorty have eration in some form, by
-                  injected
-                </p>
-
-              </div>
-            </li>
-
-            <li class="about-item">
-              <div class="about-card">
-
-                <div class="card-number">04</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/single-create-sell-item-4.png" alt="diamond icon">
-                </div>
-
-                <h3 class="h3 about-card-title">Sell Your NFT's</h3>
-
-                <p class="about-card-text">
-                  There are many variations of passagi Ipsum available but the majorty have eration in some form, by
-                  injected
-                </p>
-
-              </div>
-            </li>
-
-          </ol>
-
-        </div>
-      </section>
-
-
 
 
 
@@ -1292,189 +1120,18 @@
 
 
 
+	 <div th:insert="fragment/footer :: footer (aktif = 'index')"/>
+	 </div>	
 
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer>
-
-    <div class="footer-top">
-      <div class="container">
-
-        <div class="footer-brand">
-
-          <a href="#" class="logo">
-            <img src="./assets/images/logo.png" alt="NAFT logo">
-          </a>
-
-          <p class="footer-brand-text">
-            There are many variations of passages of but the majority have suffered alterations cted humour, or
-            randomsed words
-            which htly believable. If you are going
-          </p>
-
-          <h3 class="h4 social-title">Join the community</h3>
-
-          <ul class="social-list">
-
-            <li>
-              <a href="https://github.com/codewithsadee" class="social-link">
-                <ion-icon name="logo-github"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://twitter.com/codewithsadee" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.instagram.com/codewithsadee/" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.youtube.com/c/codewithsadee" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-
-        <div class="footer-link-box">
-
-          <ul class="footer-list">
-
-            <li>
-              <h3 class="h3 footer-item-title">Marketplace</h3>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Gaming</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Product</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">All NFTs</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Social Network</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Domain Names</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Collectibles</a>
-            </li>
-
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <h3 class="h3 footer-item-title">Explore</h3>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Featured Drops</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Live Auctions</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">All NFTs</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Collections</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Top Seller</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Items Details</a>
-            </li>
-
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <h3 class="h3 footer-item-title">Supports</h3>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Settings & Privacy</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Help & Support</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Live Auctions</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Item Details</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">24/7 Supports</a>
-            </li>
-
-            <li class="footer-item">
-              <a href="#" class="footer-link">Blog</a>
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-
-        <p class="copyright">
-          &copy; 2022 <a href="https://github.com/codewithsadee">@codewithsadee</a> all rights reserved
-        </p>
-
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-
-          <a href="#">Terms & Conditions</a>
-        </div>
-
-      </div>
-    </div>
-
-  </footer>
+  <!-- - ini awal dari Footer -->
+	
+	
+	<!-- - Ini akhir dari Footer -->
 
 
 
 
-
-  <!--
-    - #GO TO TOP
-  -->
+  <!-- - #GO TO TOP -->
 
   <a href="#top" class="go-top" data-go-top>
     <ion-icon name="arrow-up-outline"></ion-icon>
