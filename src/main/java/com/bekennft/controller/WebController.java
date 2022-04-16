@@ -11,4 +11,14 @@ public class WebController {
 		private String about(Model model) {
 			return "about";
 		}
+		
+		@GetMapping("/explore.html")
+		private String explore(Model model) {
+			return "explore.html";
+		}
+		
+		@GetMapping("/contact")
+		private String contact(Model model) {
+			return "contact";
+		}
 	}
