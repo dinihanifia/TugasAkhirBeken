@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <header th:fragment="header(muka)">
+<div class="container">
+
+      <a href="/" class="logo">
+        <img src="./assets/images/logo.png" alt="NAFT logo">
+      </a>
+
+      <div class="header-right">
+
+        <div class="header-nav-wrapper">
+
+          <button class="navbar-toggle-btn" data-navbar-toggle-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+          <nav class="navbar" data-navbar>
+
+            <ul class="navbar-list">
+
+              <li th:if="${muka}==index">
+                <a href="/" class="navbar-link active">Home</a>
+              </li>
+              <li th:unless="${muka}==index">
+                <a href="/" class="navbar-link">Home</a>
+              </li>
+
+              <li th:if="${muka}==about">
+                <a href="/about" class="navbar-link active">About</a>
+              </li>
+              <li th:unless="${muka}==about">
+                <a href="/about" class="navbar-link">About</a>
+              </li>
+
+              <li th:if="${muka}==explore">
+                <a href="/explore" class="navbar-link active">Explore</a>
+              </li>
+              <li th:unless="${muka}==explore">
+                <a href="/explore" class="navbar-link">Explore</a>
+              </li>
+
+              <li th:if="${muka}==creators">
+                <a href="/creators" class="navbar-link active">Creators</a>
+              </li>
+              <li th:unless="${muka}==creators">
+                <a href="/creators" class="navbar-link">Creators</a>
+              </li>
+
+              <li th:if="${muka}==collections">
+                <a href="/collections" class="navbar-link active">Collections</a>
+              </li>
+              <li th:unless="${muka}==collections">
+                <a href="/collections" class="navbar-link">Collections</a>
+              </li>
+
+              <li th:if="${muka}==contact">
+                <a href="/contact" class="navbar-link active">Contact</a>
+              </li>
+              <li th:unless="${muka}==contact">
+                <a href="/contact" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+        </div>
+
+        <div class="header-actions">
+          <input type="search" placeholder="Search" class="search-field">
+
+          <a href="/user/signin" class="btn btn-primary" role="button">Sign In</a>
+          <a href="/user/signup" class="btn btn-primary" role="button">Sign Up</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+</body>
+</html>
