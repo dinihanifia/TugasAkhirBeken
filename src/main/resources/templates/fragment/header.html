@@ -26,7 +26,8 @@
                 <a href="/" class="navbar-link active">Home</a>
                 </li>
                 <li th:unless="${aktif} == home" class="nav-item active">
-                <a href="" class="navbar-link">Home</a></li>
+                <a href="" class="navbar-link">Home</a>
+                </li>
                 
             	<li th:if="${aktif} == about" class="nav-item active">
                 <a href="/about" class="navbar-link active">About</a>
@@ -34,13 +35,14 @@
                 <li th:unless="${aktif} == about" class="nav-item active">
                 <a href="/about" class="navbar-link">About</a>
                 </li>
-              <li>
-                <a href="#" class="navbar-link">Creators</a>
-              </li>
+                
+               <li th:if="${aktif} == creators" class="nav-item active">
+                <a href="/creators" class="navbar-link active">Creators</a>
+                </li>
+                <li th:unless="${aktif} == creators" class="nav-item active">
+                <a href="/creators" class="navbar-link">Creators</a>
+                </li>
 
-              <li>
-                <a href="#" class="navbar-link">Collections</a>
-              </li>
               
               <li th:if="${aktif} == contact" class="nav-item active">
                 <a href="/contact" class="navbar-link active">Contact</a>

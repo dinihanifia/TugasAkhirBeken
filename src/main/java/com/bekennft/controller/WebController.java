@@ -21,4 +21,9 @@ public class WebController {
 		private String contact(Model model) {
 			return "contact";
 		}
+		
+		@GetMapping("/creators")
+		private String creators(Model model) {
+			return "creators";
+		}
 	}
