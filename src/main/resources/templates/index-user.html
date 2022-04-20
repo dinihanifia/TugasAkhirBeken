@@ -27,7 +27,7 @@
 
 <body id="top">
 		
-	 <div th:insert="fragment/header :: header (muka = 'index')"/>
+	 <div th:insert="fragment/header-user :: header (muka = 'index-user')"/>
 	 </div>	
 	 <!-- 
         - #HEADER
@@ -52,7 +52,7 @@
             </p>
 
             <div class="btn-group">
-              <button class="btn btn-primary"><a href="explore.html" class="navbar-link" >Explore More </a></button>
+              <button class="btn btn-primary"><a href="/explore" class="navbar-link" >Explore More </a></button>
             </div>
 
           </div>
@@ -352,7 +352,7 @@
 
 
 
-	 <div th:insert="fragment/footer :: footer (kaki = 'index')"/>
+	 <div th:insert="fragment/footer-user :: footer (kaki = 'index-user')"/>
 	 </div>	
 
   <!-- - ini awal dari Footer -->

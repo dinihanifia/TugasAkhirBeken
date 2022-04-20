@@ -2,6 +2,8 @@ package com.bekennft.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,10 +19,13 @@ import lombok.NoArgsConstructor;
 public class UserModel {
 	
 	@Id
-	@Column(length=25)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	@Column(nullable=false)
 	private String username;
 	private String fullName;
 	private String email;
+	@Column(nullable=false)
 	private String password;
 
 }

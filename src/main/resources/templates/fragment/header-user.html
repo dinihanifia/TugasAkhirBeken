@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <header th:fragment="header-user(muka)">
+<div class="container">
+
+      <a href="/" class="logo">
+        <img src="./assets/images/logo.png" alt="NAFT logo">
+      </a>
+
+      <div class="header-right">
+
+        <div class="header-nav-wrapper">
+
+          <button class="navbar-toggle-btn" data-navbar-toggle-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+          <nav class="navbar" data-navbar>
+
+            <ul class="navbar-list">
+
+              <li th:if="${muka}==index-user">
+                <a href="/index-user" class="navbar-link active">Home</a>
+              </li>
+              <li th:unless="${muka}==index-user">
+                <a href="/index-user" class="navbar-link">Home</a>
+              </li>
+
+              <li th:if="${muka}==explore-user">
+                <a href="/explore-user" class="navbar-link active">Explore</a>
+              </li>
+              <li th:unless="${muka}==explore-user">
+                <a href="/explore-user" class="navbar-link">Explore</a>
+              </li>
+
+              <li th:if="${muka}==create-user">
+                <a href="/create-user" class="navbar-link active">Create</a>
+              </li>
+              <li th:unless="${muka}==create-user">
+                <a href="/create-user" class="navbar-link">Create</a>
+              </li>
+
+              <li th:if="${muka}==collections-user">
+                <a href="/collections-user" class="navbar-link active">Collections</a>
+              </li>
+              <li th:unless="${muka}==collections-user">
+                <a href="/collections-user" class="navbar-link">Collections</a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+        </div>
+
+        <div class="header-actions">
+          <input type="search" placeholder="Search" class="search-field">
+
+          <a href="/profile-user" class="btn btn-primary" role="button">Profile</a>
+          <a href="/user/signin?logout" class="btn btn-primary" role="button">Sign Out</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+</body>
+</html>

@@ -15,27 +15,30 @@
 </head>
 <body>
 	<h1>Sign Up</h1>
-	<form th:action="@{/user/datauser}" method="POST" th:object="${UserModel}">
+	<div th:if="${param.success}">
+	<div class="alert alert-info">Congratulations! You've Successfully Sign Up. Please Sign In</div>
+	</div>
+	<form th:action="@{/user/signup}" method="POST" th:object="${UserModel}">
 		<div class="container">
 			<div class="row justify-content-center mt-5">
 				<div class="mb-3">
 					<label for="fullname" class="form-label">Full Name</label> <input
-						type="text" class="form-control" th:name="fullname" id="fullname"
+						type="text" class="form-control" th:field="*{fullName}" id="fullname"
 						aria-describedby="fullname">
 				</div>
 				<div class="mb-3">
 					<label for="email" class="form-label">Email</label> <input
-						type="text" class="form-control" th:name="email" id="email"
+						type="text" class="form-control" th:field="*{email}" id="email"
 						aria-describedby="email">
 				</div>
 				<div class="mb-3">
 					<label for="username" class="form-label">Username</label> <input
-						type="text" class="form-control" th:name="username" id="username"
+						type="text" class="form-control" th:field="*{username}" id="username"
 						aria-describedby="username">
 				</div>
 				<div class="mb-3">
 					<label for="password" class="form-label">Password</label> <input
-						type="password" class="form-control" th:name="password"
+						type="password" class="form-control" th:field="*{password}"
 						id="password" aria-describedby="password">
 				</div>
 				<p>Already have an account?<a href="/user/signin"> Sign in</a></p>
