@@ -18,6 +18,7 @@ public class WebController {
 	@Autowired
 	ProductRepository productRepo;
 	
+	
 	@GetMapping("/")
 	private String index(Model model) {
 		return "index";
@@ -50,6 +51,8 @@ public class WebController {
 	
 	@GetMapping("/explore-user")
 	private String exploreUser(Model model) {
+//		productRepo.findAll()
+		model.addAttribute("productModel",productRepo.findAll());
 		return "explore-user";
 	}
 	

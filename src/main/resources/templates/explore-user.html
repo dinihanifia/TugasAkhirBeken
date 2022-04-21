@@ -8,7 +8,7 @@
 <title>Explore NFT</title>
 </head>
 <body>
-	 <div th:insert="fragment/header :: header (aktif = 'index-user')"/>
+	 <div th:insert="fragment/header-user :: header (aktif = 'index-user')"/>
 	 </div>
 	 <section class="explore-product">
         <div class="container">
@@ -27,7 +27,7 @@
 
           <ul class="product-list">
 
-            <li th:each=" : ${listUser}" class="product-item">
+            <li th:each="product : ${productModel}" class="product-item">
 
               <div class="product-card" tabindex="0">
 
