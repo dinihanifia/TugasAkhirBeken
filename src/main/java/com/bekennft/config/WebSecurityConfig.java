@@ -52,7 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //	http://localhost:8080/customer/
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/user/signin","/user/signup","/"
+		http.csrf().disable().authorizeRequests().antMatchers("/user/signin","/user/signup"
+		,"/","/**"
 		,"/index-user","/explore-user","/create","/create-user","/collections-user","/profile-user"
 		,"/assets/**").permitAll() //** untuk mengakses endpoint bebasnya
 		.anyRequest().authenticated().and()

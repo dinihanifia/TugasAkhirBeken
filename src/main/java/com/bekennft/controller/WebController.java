@@ -1,5 +1,6 @@
 package com.bekennft.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,15 +11,36 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.bekennft.model.ProductModel;
 import com.bekennft.repository.ProductRepository;
 
+
 @Controller
 public class WebController {
-	
+
 	@Autowired
 	ProductRepository productRepo;
 	
 	@GetMapping("/")
 	private String index(Model model) {
 		return "index";
+	}
+	
+	@GetMapping("/about")
+	private String about(Model model) {
+		return "about";
+	}
+	
+	@GetMapping("/explore")
+	private String explore(Model model) {
+		return "explore";
+	}
+	
+	@GetMapping("/contact")
+	private String contact(Model model) {
+		return "contact";
+	}
+	
+	@GetMapping("/creators")
+	private String creators(Model model) {
+		return "creators";
 	}
 	
 	@GetMapping("/index-user")

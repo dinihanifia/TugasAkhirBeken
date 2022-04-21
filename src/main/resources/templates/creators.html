@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+<title>Creators NFT</title>
+</head>
+<body>
+	<div th:insert="fragment/header :: header (aktif = 'home')"/>
+      
+      <section class="top-seller">
+        <div class="container">
+        
+        <h1 class="h1 hero-title">Creators<span>NFT</span></h1>
+            <ion-icon name="chevron-down"></ion-icon>
+          </h2>
+
+          <ol class="top-seller-list">
+
+            <li class="top-seller-item">
+              <a href="#" class="top-seller-card">
+
+                <div class="card-number">01</div>
+
+                <figure class="card-avatar">
+                  <img src="./assets/images/seller-01.png" alt="Sendi Nahampun">
+
+                  <div class="avatar-badge">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                  </div>
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h5 card-title">Sendi Nahampun</h3>
+
+                  <data value="4500000">$4,500,000</data>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="top-seller-item">
+              <a href="#" class="top-seller-card">
+
+                <div class="card-number">02</div>
+
+                <figure class="card-avatar">
+                  <img src="./assets/images/seller-02.png" alt="Gregorius Kevin">
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h5 card-title">Gregorius Kevin</h3>
+
+                  <data value="6500000">$6,500,000</data>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="top-seller-item">
+              <a href="#" class="top-seller-card">
+
+                <div class="card-number">03</div>
+
+                <figure class="card-avatar">
+                  <img src="./assets/images/seller-03.png" alt="Dini Hanifia">
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h5 card-title">Dini Hanifia</h3>
+
+                  <data value="3500000">$3,500,000</data>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="top-seller-item">
+              <a href="#" class="top-seller-card">
+
+                <div class="card-number">04</div>
+
+                <figure class="card-avatar">
+                  <img src="./assets/images/seller-04.png" alt="Benediktus Adrian">
+
+                  <div class="avatar-badge">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                  </div>
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h5 card-title">Benediktus Adrian</h3>
+
+                  <data value="7500000">$7,500,000</data>
+                </div>
+
+              </a>
+            </li>
+
+              </a>
+            </li>
+
+          </ol>
+
+        </div>
+      </section>
+      
+       <div th:insert="fragment/footer :: footer (aktif = 'home')"/>
+</body>
+</html>
