@@ -26,10 +26,9 @@ public class ProductModel {
 	private long id;
 	@Column(nullable=false)
 	private String productName;
-	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name="creator", referencedColumnName = "username")
-	private UserModel creator;
-	private long price;
+	private String creator;
+	private String creatorFullName;
+	private String price;
 	@Column(nullable=false)
 	private String images;
 

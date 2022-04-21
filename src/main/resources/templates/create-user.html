@@ -11,7 +11,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 </head>
 <body>
 	<section class="hero">
-		<form th:action="@{/product/create-user}" method="POST"
+		<form th:action="@{/create-user}" method="POST"
 			th:object="${ProductModel}">
 			<div class="container">
 				<div class="col mt-5">
@@ -19,6 +19,18 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 						<label for="productName" class="form-label">Name</label> <input
 							type="text" class="form-control" th:field="*{productName}"
 							id="productName" aria-describedby="productName">
+					</div>
+					<br/>
+					<div class="mb-3">
+						<label for="creator" class="form-label">Creator Username</label> <input
+							type="text" class="form-control" th:field="*{creator}"
+							id="creator" aria-describedby="creator">
+					</div>
+					<br/>
+					<div class="mb-3">
+						<label for="creatorFullName" class="form-label">Creator Full Name</label> <input
+							type="text" class="form-control" th:field="*{creatorFullName}"
+							id="creatorFullName" aria-describedby="creatorFullName">
 					</div>
 					<br/>
 					<div class="mb-3">

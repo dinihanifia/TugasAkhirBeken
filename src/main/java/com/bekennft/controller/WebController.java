@@ -1,15 +1,21 @@
 package com.bekennft.controller;
 
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bekennft.model.ProductModel;
 import com.bekennft.repository.ProductRepository;
+import com.bekennft.utility.FileUtility;
 
 
 @Controller
@@ -68,9 +74,17 @@ public class WebController {
 	}
 	
 	@PostMapping("/create-user")
-	private String createImg(@ModelAttribute ProductModel product) {
-		productRepo.save(product);
-		return "redirect:/create-user";
+	private String saveCreate(@ModelAttribute ProductModel data,
+			@RequestParam(value="file")MultipartFile file) throws IOException {
+		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+		String uploadDir = "create-images";
+		
+//		cara membaca image yang pertama data.setGambar("/"+uploadDir+"/"+fileName);
+
+		data.setImages(fileName);
+		FileUtility.simpanFile(uploadDir, fileName, file);
+		productRepo.save(data);
+		return "redirect:/explore-user";
 	}
 	
 	@GetMapping("/collections-user")
