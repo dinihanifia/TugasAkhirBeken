@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -50,8 +51,6 @@
                 <li th:unless="${aktif} == contact" class="nav-item active">
                 <a href="/contact" class="navbar-link">Contact</a>
                 </li>
-            </ul>
-
           </nav>
 
         </div>
@@ -59,13 +58,16 @@
         <div class="header-actions">
           <input type="search" placeholder="Search" class="search-field">
 
-           <a href="/user/signin" button class="btn btn-primary">Sign in</button></a>
-           <a href="/user/signup" button class="btn btn-primary">Sign up</button></a>
+          <a href="/user/signin" class="btn btn-primary" role="button">Sign In</a>
+          <a href="/user/signup" class="btn btn-primary" role="button">Sign Up</a>
+
         </div>
 
       </div>
 
     </div>
-	</header>
+
+
+  </header>
 </body>
 </html>

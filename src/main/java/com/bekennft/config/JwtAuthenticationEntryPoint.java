@@ -17,15 +17,15 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint,Ser
 	/**
 	 * 
 	 */
+
+
 	private static final long serialVersionUID = -8689339910270006172L;
 
 	@Override
 	public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException authException) throws IOException, ServletException {
 		response.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Unauthorized");
-		// TODO Auto-generated method stub
-		
+
 	}
-	
 	
 }

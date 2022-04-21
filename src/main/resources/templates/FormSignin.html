@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
  <link rel="stylesheet" href="./assets/css/style.css">
+
 <meta charset="ISO-8859-1">
 <title>NFT</title>
 <link
@@ -16,17 +18,20 @@
 </head>
 <body>
 	<h1>Sign In</h1>
-	<form th:action="@{/user/datauser}" method="Get">
+	<div th:if="${param.logout}">
+	<div class="alert alert-info">You've Been Sign Out</div>
+	</div>
+	<form th:action="@{/user/signin}" method="POST" th:object="${UserModel}">
 		<div class="container">
 			<div class="row justify-content-center mt-5">
 				<div class="mb-3">
-					<label for="email" class="form-label">Email</label> <input
-						type="text" class="form-control" th:name="email" id="email"
-						aria-describedby="email">
+					<label for="username" class="form-label">Username</label> <input
+						type="text" class="form-control" th:field="*{username}" id="username"
+						aria-describedby="username">
 				</div>
 				<div class="mb-3">
 					<label for="password" class="form-label">Password</label> <input
-						type="password" class="form-control" th:name="password"
+						type="password" class="form-control" th:field="*{password}"
 						id="password" aria-describedby="password">
 				</div>
 				<p>Don't have an account yet?<a href="/user/signup"> Create one!</a></p>

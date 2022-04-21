@@ -14,6 +14,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+
 @Component
 public class JwtTokenUtil implements Serializable {
 
@@ -38,17 +39,18 @@ public class JwtTokenUtil implements Serializable {
 		return getAllClaimsFromToken(token).get("name").toString();
 	}
 	
-	//untuk dapetin informasi  dari token dengan secret key
+//	untuk dapetin informasi dari si token dengan secret key
+
 	private Claims getAllClaimsFromToken(String token) {
 		return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
 	}
 	
-	//mendapatkan expired data dari jwt token
-	private Date getExpirationDateFromToken(String token){
+//	mendapatkan tanggal kadaluarsa dari jwt token
+	public Date getExpirationDateFromToken(String token) {
 		return getClaimFromToken(token, Claims::getExpiration);
 	}
 	
-	//ngecek token kadaluarsa
+//	ngecek token kadaluarsa
 	private boolean isTokenExpired(String token) {
 		final Date expiration = getExpirationDateFromToken(token);
 		return expiration.before(new Date());
@@ -68,4 +70,5 @@ public class JwtTokenUtil implements Serializable {
 		final String username = getUserNameFromToken(token);
 		return (username.equalsIgnoreCase(userDetails.getUsername()) && !isTokenExpired(token));
 	}
+
 }
