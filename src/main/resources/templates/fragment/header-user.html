@@ -38,11 +38,18 @@
                 <a href="/explore-user" class="navbar-link">Explore</a>
               </li>
 
-              <li th:if="${muka}==create">
+              <li th:if="${aktif}==create">
                 <a href="/create" class="navbar-link active">Create</a>
               </li>
-              <li th:unless="${muka}==create">
+              <li th:unless="${aktif}==create">
                 <a href="/create" class="navbar-link">Create</a>
+              </li>
+              
+              <li th:if="${aktif}==creators-user">
+                <a href="/creators-user" class="navbar-link active">Creators</a>
+              </li>
+              <li th:unless="${aktif}==creators-user">
+                <a href="/creators-user" class="navbar-link">Creators</a>
               </li>
 
               <li th:if="${aktif}==collections-user">
