@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bekennft.config.JwtTokenUtil;
 import com.bekennft.model.UserModel;
@@ -63,12 +64,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/signin")
-	private String signin(@ModelAttribute UserModel userModel) throws Exception {
+	private String signin(@ModelAttribute UserModel userModel, Model model) throws Exception {
 		authenticate(userModel.getUsername(),userModel.getPassword());
 		final UserDetails userDetails = jwtUserDetailService.loadUserByUsername(userModel.getUsername());
 		final String token = jwtTokenUtil.generateToken(userDetails);
 		ResponseEntity.ok(token);
-		return "redirect:/index-user";
+		return "redirect:/index-user?success" + userModel.getUsername();
 		
 	}
 	

@@ -2,6 +2,7 @@ package com.bekennft.controller;
 
 
 import java.io.IOException;
+import java.util.List;
 
 import org.hibernate.annotations.Target;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bekennft.model.ContactModel;
 import com.bekennft.model.ProductModel;
+import com.bekennft.model.UserCustomModel;
+import com.bekennft.model.UserModel;
 import com.bekennft.repository.ContactRepository;
 import com.bekennft.repository.ProductRepository;
 import com.bekennft.repository.UserRepository;
@@ -64,11 +67,26 @@ public class WebController {
 		model.addAttribute("ContactModel", new ContactModel());
 		return "contactform";
 	}
+
+	@PostMapping("/contactform")
+	private String saveContact(@ModelAttribute ContactModel data) {
+		contactRepo.save(data);
+		return "redirect:/contactform";
+	}
 	
 	@GetMapping("/user-detail")
 	private String userdetail(Model model) {
 		return "user-detail";
 	}
+	
+	/*
+	 * @GetMapping("/user-detail/info") private List<UserCustomModel>
+	 * getDataByEmailAndFullNameAndUsername(@RequestParam(name="email")String email,
+	 * 
+	 * @RequestParam(name="fullName")String
+	 * fullName, @RequestParam(name="username")String username){ return
+	 * userRepo.getDataByEmailAndFullnameAndUsername(email, fullName, username); }
+	 */
 	
 	@GetMapping("/creators")
 	private String creators(Model model) {
@@ -117,22 +135,15 @@ public class WebController {
 		return "redirect:/explore-user";
 	}
 	
-	@PostMapping("/contactform")
-	private String saveContact(@ModelAttribute ContactModel data) {
-		contactRepo.save(data);
-		return "redirect:/contactform";
-	}
-	
-	
-	
 	@GetMapping("/collections-user")
 	private String collectionsUser(Model model) {
 		return "collections-user";
 	}
 	
 	@GetMapping("/profile")
-	private String profileUser(@RequestParam String username) {
-		return "index-user " + userRepo.findByUsername(username);
+	private String profileUser(Model model, @RequestParam String username) {
+		model.addAttribute("UserModel", new UserModel());
+		return "redirect:/profile?success " + userRepo.findByUsername(username);
 	}
 	
 	

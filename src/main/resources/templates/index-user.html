@@ -29,10 +29,15 @@
 		
 	 <div th:insert="fragment/header-user :: header (aktif = 'index-user')"/>
 	 </div>	
+	 
+	 
 	 <!-- 
         - #HEADER
       -->
   <main>
+  <div th:if="${param.success}">
+	<div class="alert alert-info">Welcome, </div>
+	</div>
   
     <article>
     
