@@ -6,7 +6,7 @@
 </head>
 <body>
  <header th:fragment="header-user(aktif)">
-<div class="container">
+<div th:action="@{/user/signin}" method="GET" th:object="${UserModel}" class="container">
 
       <a href="/" class="logo">
         <img src="./assets/images/NFT1.jpg" width="100" height="90" alt="NFT logo">
@@ -38,16 +38,20 @@
                 <a href="/explore-user" class="navbar-link">Explore</a>
               </li>
 
-              <li th:if="${muka}==create">
+              <li th:if="${aktif}==create">
                 <a href="/create" class="navbar-link active">Create</a>
               </li>
-              <li th:unless="${muka}==create">
+              <li th:unless="${aktif}==create">
                 <a href="/create" class="navbar-link">Create</a>
               </li>
 
               <li th:if="${aktif}==collections-user">
                 <a href="/collections-user" class="navbar-link active">Collections</a>
               </li>
+              <li th:unless="${aktif}==collections-user">
+                <a href="/collections-user" class="navbar-link">Collections</a>
+              </li>
+              
               <li th:unless="${aktif}==collections-user">
                 <a href="/collections-user" class="navbar-link">Collections</a>
               </li>
@@ -60,8 +64,7 @@
 
         <div class="header-actions">
           <input type="search" placeholder="Search" class="search-field">
-
-          <a href="/profile-user" class="btn btn-primary" role="button">Profile</a>
+          <a href="/profile" class="btn btn-primary" role="button">Welcome, </a>
           <a href="/user/signin?logout" class="btn btn-primary" role="button">Sign Out</a>
         </div>
 

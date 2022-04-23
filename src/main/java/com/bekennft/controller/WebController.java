@@ -10,11 +10,14 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bekennft.model.ProductModel;
 import com.bekennft.repository.ProductRepository;
+import com.bekennft.repository.UserRepository;
 import com.bekennft.utility.FileUtility;
 
 
@@ -23,6 +26,9 @@ public class WebController {
 
 	@Autowired
 	ProductRepository productRepo;
+	
+	@Autowired
+	UserRepository userRepo;
 	
 	
 	@GetMapping("/")
@@ -92,9 +98,10 @@ public class WebController {
 		return "collections-user";
 	}
 	
-	@GetMapping("/profile-user")
-	private String profileUser(Model model) {
-		return "profile-user";
+	@GetMapping("/profile")
+	@ResponseBody
+	private String profileUser(@RequestParam String username) {
+		return "PROFILE " + username;
 	}
 
 }
