@@ -51,6 +51,15 @@
                 <li th:unless="${aktif} == contact" class="nav-item active">
                 <a href="/contact" class="navbar-link">Contact</a>
                 </li>
+                
+               <li th:if="${aktif} == contact" class="nav-item active">
+                <a href="/explore" class="navbar-link active">Explore</a>
+                </li>
+                <li th:unless="${aktif} == contact" class="nav-item active">
+                <a href="/explore" class="navbar-link">Explore</a>
+                </li>
+                
+                
             </ul>
           </nav>
         </div>
