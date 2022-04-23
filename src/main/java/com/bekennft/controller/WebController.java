@@ -65,6 +65,10 @@ public class WebController {
 		return "contactform";
 	}
 	
+	@GetMapping("/user-detail")
+	private String userdetail(Model model) {
+		return "user-detail";
+	}
 	
 	@GetMapping("/creators")
 	private String creators(Model model) {

@@ -59,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http.csrf().disable().authorizeRequests().antMatchers("/user/signin","/user/signup","/"
 		,"/index-user","/explore-user","/create-user","/collections-user","/profile-user","/creators-user"
-		,"/contactform"
+		,"/contactform","/user-detail"
 		,"/assets/**","/**").permitAll() //** untuk mengakses endpoint bebasnya
 		.anyRequest().authenticated().and()
 		.exceptionHandling().authenticationEntryPoint(jwtAuthEntryPoint).and().sessionManagement()
