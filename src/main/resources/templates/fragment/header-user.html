@@ -44,16 +44,12 @@
               <li th:unless="${aktif}==create">
                 <a href="/create" class="navbar-link">Create</a>
               </li>
-
-              <li th:if="${aktif}==collections-user">
-                <a href="/collections-user" class="navbar-link active">Collections</a>
-              </li>
-              <li th:unless="${aktif}==collections-user">
-                <a href="/collections-user" class="navbar-link">Collections</a>
-              </li>
               
-              <li th:unless="${aktif}==collections-user">
-                <a href="/collections-user" class="navbar-link">Collections</a>
+              <li th:if="${aktif}==creators-user">
+                <a href="/creators-user" class="navbar-link active">Creators</a>
+              </li>
+              <li th:unless="${aktif}==creators-user">
+                <a href="/creators-user" class="navbar-link">Creators</a>
               </li>
 
             </ul>
@@ -64,7 +60,7 @@
 
         <div class="header-actions">
           <input type="search" placeholder="Search" class="search-field">
-          <a href="/profile" class="btn btn-primary" role="button">Welcome, </a>
+          <a href="/profile?username" class="btn btn-primary" role="button">Profile </a>
           <a href="/user/signin?logout" class="btn btn-primary" role="button">Sign Out</a>
         </div>
 

@@ -3,6 +3,7 @@ package com.bekennft.controller;
 
 import java.io.IOException;
 
+import org.hibernate.annotations.Target;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bekennft.model.ContactModel;
 import com.bekennft.model.ProductModel;
+import com.bekennft.repository.ContactRepository;
 import com.bekennft.repository.ProductRepository;
 import com.bekennft.repository.UserRepository;
 import com.bekennft.utility.FileUtility;
@@ -29,7 +32,9 @@ public class WebController {
 	
 	@Autowired
 	UserRepository userRepo;
-	
+
+	@Autowired
+	ContactRepository contactRepo;
 	
 	@GetMapping("/")
 	private String index(Model model) {
@@ -50,6 +55,16 @@ public class WebController {
 	private String contact(Model model) {
 		return "contact";
 	}
+	@GetMapping("/contact2")
+	private String contact2(Model model) {
+		return "contact2";
+	}
+	@GetMapping("/contactform")
+	private String contactform(Model model) {
+		model.addAttribute("ContactModel", new ContactModel());
+		return "contactform";
+	}
+	
 	
 	@GetMapping("/creators")
 	private String creators(Model model) {
@@ -73,6 +88,11 @@ public class WebController {
 		return "create";
 	}
 	
+	@GetMapping("/creators-user")
+	private String creatorsuser(Model model) {
+		return "creators-user";
+	}
+	
 	@GetMapping("/create-user")
 	private String createUser(Model model) {
 		model.addAttribute("ProductModel", new ProductModel());
@@ -93,15 +113,24 @@ public class WebController {
 		return "redirect:/explore-user";
 	}
 	
+	@PostMapping("/contactform")
+	private String saveContact(@ModelAttribute ContactModel data) {
+		contactRepo.save(data);
+		return "redirect:/contactform";
+	}
+	
+	
+	
 	@GetMapping("/collections-user")
 	private String collectionsUser(Model model) {
 		return "collections-user";
 	}
 	
 	@GetMapping("/profile")
-	@ResponseBody
 	private String profileUser(@RequestParam String username) {
-		return "PROFILE " + username;
+		return "index-user " + userRepo.findByUsername(username);
 	}
-
+	
+	
+	
 }
