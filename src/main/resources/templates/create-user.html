@@ -11,7 +11,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 </head>
 <body>
 	<section class="hero">
-		<form th:action="@{/create-user}" method="POST"
+		<form enctype="multipart/form-data"
+		 th:action="@{/create-user}" method="POST"
 			th:object="${ProductModel}">
 			<div class="container">
 				<div class="col mt-5">
@@ -40,7 +41,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					</div>
 					<br/>
 					<div class="custom-file mb-3">
-						<input type="file" class="custom-file-input" id="customFile">
+						<input type="file" class="custom-file-input" id="customFile" th:name="file">
 						<label class="custom-file-label" for="customFile">Choose
 							file</label>
 					</div>

@@ -33,7 +33,7 @@
 
                 <figure class="product-banner">
 
-                  <img th:src="@{'/create-images/'+${create.images}}" alt="">
+                  <img th:src="@{'/create-images/'+${product.images}}" alt="">
 
                   <div class="product-actions">
                     <button class="product-card-menu">
@@ -51,7 +51,7 @@
 
                 <div class="product-content">
 
-                  <a href="#" th:text="${create.productName}" class="h4 product-title">Dimond riding a blue body art</a>
+                  <a href="#" th:text="${product.productName}" class="h4 product-title">Dimond riding a blue body art</a>
 
                   <div class="product-meta">
 
@@ -62,15 +62,15 @@
                       </figure>
 
                       <div class="author-content">
-                        <h4 th:text="${create.creator}" class="h5 author-title">Jack R</h4>
+                        <h4 th:text="${product.creator}" class="h5 author-title">Jack R</h4>
 
-                        <a href="#" th:text="${create.creatorFullName}" class="author-username">@jackr</a>
+                        <a href="#" th:text="${product.creatorFullName}" class="author-username">@jackr</a>
                       </div>
 
                     </div>
 
                     <div class="product-price">
-                      <data value="0.568" th:text="${create.price}" >0.568ETH</data>
+                      <data value="0.568" th:text="${product.price}" >0.568ETH</data>
 
                       <p class="label">Current Bid</p>
                     </div>
