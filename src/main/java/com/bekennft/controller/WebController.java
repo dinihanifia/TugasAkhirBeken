@@ -26,10 +26,13 @@ import com.bekennft.repository.ProductRepository;
 import com.bekennft.repository.UserRepository;
 import com.bekennft.utility.FileUtility;
 
-
+	
 @Controller
 public class WebController {
-
+	
+	private double saldo = 5.0000;
+	
+	
 	@Autowired
 	ProductRepository productRepo;
 	
@@ -95,6 +98,7 @@ public class WebController {
 	
 	@GetMapping("/index-user")
 	private String indexUser(Model model) {
+		model.addAttribute("saldo", saldo);
 		return "index-user";
 	}
 	
@@ -102,22 +106,26 @@ public class WebController {
 	private String exploreUser(Model model) {
 //		productRepo.findAll()
 		model.addAttribute("productModel",productRepo.findAll());
+		model.addAttribute("saldo", saldo);
 		return "explore-user";
 	}
 	
 	@GetMapping("/create")
 	private String create(Model model) {
+		model.addAttribute("saldo", saldo);
 		return "create";
 	}
 	
 	@GetMapping("/creators-user")
 	private String creatorsuser(Model model) {
+		model.addAttribute("saldo", saldo);
 		return "creators-user";
 	}
 	
 	@GetMapping("/create-user")
 	private String createUser(Model model) {
 		model.addAttribute("ProductModel", new ProductModel());
+		
 		return "create-user";
 	}
 	
@@ -137,15 +145,21 @@ public class WebController {
 	
 	@GetMapping("/collections-user")
 	private String collectionsUser(Model model) {
+		model.addAttribute("saldo", saldo);
 		return "collections-user";
 	}
 	
 	@GetMapping("/profile")
 	private String profileUser(Model model, @RequestParam String username) {
 		model.addAttribute("UserModel", new UserModel());
+		model.addAttribute("saldo", saldo);
 		return "redirect:/profile?success " + userRepo.findByUsername(username);
 	}
 	
-	
+	@GetMapping("/buy")
+	private String buy(Model model) {
+		saldo = saldo - 0.568;
+		return "redirect:/index-user";
+	}
 	
 }
