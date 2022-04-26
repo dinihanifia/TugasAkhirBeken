@@ -11,42 +11,37 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 </head>
 <body>
 	<section class="hero">
-		<form enctype="multipart/form-data"
-		 th:action="@{/create-user}" method="POST"
-			th:object="${ProductModel}">
+		<form th:action="@{/contactform}" method="POST"
+			th:object="${ContactModel}">
 			<div class="container">
 				<div class="col mt-5">
 					<div class="mb-3">
-						<label for="productName" class="form-label">Name</label> <input
-							type="text" class="form-control" th:field="*{productName}"
-							id="productName" aria-describedby="productName">
+						<label for="email" class="form-label">Email</label> <input
+							type="text" class="form-control" th:field="*{Email}"
+							id="email" aria-describedby="email">
 					</div>
 					<br/>
 					<div class="mb-3">
-						<label for="creator" class="form-label">Creator Username</label> <input
-							type="text" class="form-control" th:field="*{creator}"
-							id="creator" aria-describedby="creator">
+						<label for="name" class="form-label">Name</label> <input
+							type="text" class="form-control" th:field="*{Name}"
+							id="name" aria-describedby="name">
 					</div>
 					<br/>
 					<div class="mb-3">
-						<label for="creatorFullName" class="form-label">Creator Full Name</label> <input
-							type="text" class="form-control" th:field="*{creatorFullName}"
-							id="creatorFullName" aria-describedby="creatorFullName">
+						<label for="phonenumber" class="form-label">Phone Number</label> <input
+							type="text" class="form-control" th:field="*{PhoneNumber}"
+							id="phonenumber" aria-describedby="phonenumber">
 					</div>
 					<br/>
 					<div class="mb-3">
-						<label for="price" class="form-label">Price</label> <input
-							type="text" class="form-control" th:field="*{price}" id="price"
-							aria-describedby="price">
+						<label for="messages" class="form-label">Messages</label> <input
+							type="text" class="form-control" th:field="*{Messages}" id="messages"
+							aria-describedby="messages">
 					</div>
 					<br/>
-					<div class="custom-file mb-3">
-						<input type="file" class="custom-file-input" id="customFile" th:name="file">
-						<label class="custom-file-label" for="customFile">Choose
-							file</label>
-					</div>
+					
 					<br/>
-					<button type="submit" class="btn btn-warning plus float-right">Create</button>
+					<button type="submit" class="btn btn-warning plus float-right">Submit</button>
 				</div>
 			</div>
 			</div>

@@ -29,10 +29,15 @@
 		
 	 <div th:insert="fragment/header-user :: header (aktif = 'index-user')"/>
 	 </div>	
+	 
+	 
 	 <!-- 
         - #HEADER
       -->
   <main>
+  <div th:if="${param.success}">
+	<div class="alert alert-info">Welcome, </div>
+	</div>
   
     <article>
     
@@ -45,7 +50,7 @@
 
           <div class="hero-content">
 
-            <h1 class="h1 hero-title">Marketplace<span>NFT</span></h1>
+            <h1 class="h1 hero-title">Beken<span>NFT</span></h1>
              <h2 class="h2 hero-title">Sebagai tempat penjualan gambar dengan berbasis Cryptocurrency</h2>
             <p class="hero-text">
              Kami memberikan layanan mudah untuk Anda, Choose Me, We will serve You!
@@ -58,7 +63,7 @@
           </div>
 
           <figure class="hero-banner">
-            <img src="./assets/images/NFT2.jpg" alt="nft art">
+            <img src="./assets/images/monyed.gif" alt="nft art">
           </figure>
 
         </div>
@@ -77,10 +82,10 @@
           <div class="section-header-wrapper">
 
             <h2 class="h2 section-title">Newest Items</h2>
-
-            <button class="btn btn-primary">View all</button>
-
-          </div>
+			<div class="btn-group">
+              <button class="btn btn-primary"><a href="/explore-user" class="navbar-link" >Explore More </a></button>
+            </div>
+	          </div>
 
           <ul class="product-list">
 
@@ -102,7 +107,7 @@
                     </button>
                   </div>
 
-                  <button class="place-bid-btn">Klik Disini!</button>
+                  <button class="place-bid-btn">Place Bid</button>
 
                 </figure>
 
@@ -115,7 +120,7 @@
                     <div class="product-author">
 
                       <figure class="author-img">
-                        <img src="./assets/images/bidding-user.png" alt="Jack Reacher">
+                        <img src="./assets/images/avatar1.png" alt="Jack Reacher">
                       </figure>
 
                       <div class="author-content">
@@ -164,7 +169,7 @@
                     </button>
                   </div>
 
-                  <button class="place-bid-btn">Klik Disini!</button>
+                  <button class="place-bid-btn">Place Bid</button>
 
                 </figure>
 
@@ -177,7 +182,7 @@
                     <div class="product-author">
 
                       <figure class="author-img">
-                        <img src="./assets/images/bidding-user.png" alt="Jack Reacher">
+                        <img src="./assets/images/avatar2.png" alt="Jack Reacher">
                       </figure>
 
                       <div class="author-content">
@@ -226,7 +231,7 @@
                     </button>
                   </div>
 
-                  <button class="place-bid-btn">Klik Disini!</button>
+                  <button class="place-bid-btn">Place Bid!</button>
 
                 </figure>
 
@@ -239,7 +244,7 @@
                     <div class="product-author">
 
                       <figure class="author-img">
-                        <img src="./assets/images/bidding-user.png" alt="Jack Reacher">
+                        <img src="./assets/images/avatar3.png" alt="Jack Reacher">
                       </figure>
 
                       <div class="author-content">
@@ -288,7 +293,7 @@
                     </button>
                   </div>
 
-                  <button class="place-bid-btn">Klik Disini!</button>
+                  <button class="place-bid-btn">Place Bid</button>
 
                 </figure>
 
@@ -301,7 +306,7 @@
                     <div class="product-author">
 
                       <figure class="author-img">
-                        <img src="./assets/images/bidding-user.png" alt="Jack Reacher">
+                        <img src="./assets/images/avatar4.png" alt="Jack Reacher">
                       </figure>
 
                       <div class="author-content">

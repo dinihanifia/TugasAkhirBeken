@@ -21,6 +21,9 @@
 	<div th:if="${param.logout}">
 	<div class="alert alert-info">You've Been Sign Out</div>
 	</div>
+	<div th:if="${param.success}">
+	<div class="alert alert-info">Welcome, </div>
+	</div>
 	<form th:action="@{/user/signin}" method="POST" th:object="${UserModel}">
 		<div class="container">
 			<div class="row justify-content-center mt-5">

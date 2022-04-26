@@ -27,7 +27,7 @@
 
 <body id="top">
 		
-	 <div th:insert="fragment/header :: header (muka = 'index')"/>
+	 <div th:insert="fragment/header-user :: header (aktif = 'create')"/>
 	 </div>	
 	 <!-- 
         - #HEADER
@@ -45,20 +45,21 @@
 
           <div class="hero-content">
 
-            <h1 class="h1 hero-title">Marketplace<span>NFT</span></h1>
-             <h2 class="h2 hero-title">Sebagai tempat penjualan gambar dengan berbasis Cryptocurrency</h2>
+            <h1 class="h1 hero-title">Connect Your<span>Wallet</span></h1>
+             <h2 class="h2 hero-title">The Place for NFT EZ Trasaction out of your mind, beautifuly great</h2>
             <p class="hero-text">
-             Kami memberikan layanan mudah untuk Anda, Choose Me, We will serve You!
+             EZ transaction using your E-Wallet only for a few fucking second
             </p>
 
             <div class="btn-group">
-              <button class="btn btn-primary"><a href="/create-user" class="navbar-link" >Connect Wallet </a></button>
+              <button class="btn btn-primary"><a href="#" class="navbar-link" >Connect Wallet </a></button>
+              <button class="btn btn-primary"><a href="/create-user" class="navbar-link" >Create NFT Products </a></button>
             </div>
-
+		
           </div>
 
           <figure class="hero-banner">
-            <img src="./assets/images/NFT2.jpg" alt="nft art">
+            <img src="./assets/images/money.png" alt="nft art">
           </figure>
 
         </div>
@@ -70,7 +71,7 @@
 
   <!-- - ini awal dari Footer -->
 	
-	 <div th:insert="fragment/footer :: footer (kaki = 'index')"/>
+	 <div th:insert="fragment/footer-user :: footer (aktif = 'create')"/>
 	 </div>	
 	
 	<!-- - Ini akhir dari Footer -->
